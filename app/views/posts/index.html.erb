@@ -12,6 +12,10 @@
         <h2 class="blog-post-title"><%= post.title %></h2>
         <p class="blog-post-meta">
           <%= l post.published_at %> by <%= post.author %>
+          <br>
+          <% post.categories.reload.each do |category| %>
+            <span class="label label-default"><%= category.name %></span>
+          <% end %>
         </p>
 
         <%= sanitize post.content %>
