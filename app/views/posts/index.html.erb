@@ -1,6 +1,6 @@
 <div class="blog-header">
-  <h1 class="blog-title">The Bootstrap Blog</h1>
-  <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+  <h1 class="blog-title">Theo's Blog</h1>
+  <p class="lead blog-description">Theo's personal blog for learning Rails.</p>
 </div>
 
 <div class="row">
@@ -10,19 +10,21 @@
     <% @posts.each do |post| %>
       <div class="blog-post">
         <h2 class="blog-post-title"><%= post.title %></h2>
-        <p class="blog-post-meta"><%= l post.published_at %> by <a href="#"><%= post.author %></a></p>
+        <p class="blog-post-meta">
+          <%= l post.published_at %> by <%= post.author %>
+        </p>
 
-        <%= post.content %>
+        <%= sanitize post.content %>
       </div><!-- /.blog-post -->
     <% end %>
-
+<!--
     <nav>
       <ul class="pager">
         <li><a href="#">Previous</a></li>
         <li><a href="#">Next</a></li>
       </ul>
     </nav>
-
+ -->
   </div><!-- /.blog-main -->
 
   <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
