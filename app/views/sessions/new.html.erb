@@ -1,0 +1,15 @@
+<div class="blog-header">
+  <h1 class="blog-title">Sign In</h1>
+</div>
+
+<%= form_for(@user, url: sign_in_path) do |f| %>
+  <div class="form-group">
+    <label for="user_email">Email address</label>
+    <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+  </div>
+  <div class="form-group">
+    <label for="user_password">Password</label>
+    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+  </div>
+  <%= f.submit "Sign In", class: "btn btn-default" %>
+<% end %>

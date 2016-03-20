@@ -1,0 +1,23 @@
+<div class="blog-header">
+  <h1 class="blog-title">Sign Up</h1>
+</div>
+
+<%= form_for(@user, url: sign_up_path) do |f| %>
+  <div class="form-group">
+    <label for="user_email">Email address</label>
+    <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+  </div>
+  <div class="form-group">
+    <label for="user_nickname">Nickname</label>
+    <%= f.text_field :nickname, class: "form-control", placeholder: "Nickname" %>
+  </div>
+  <div class="form-group">
+    <label for="user_password">Password</label>
+    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+  </div>
+  <div class="form-group">
+    <label for="user_password_confirmation">Password confirmation</label>
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password confirmation" %>
+  </div>
+  <%= f.submit "Sign Up", class: "btn btn-default" %>
+<% end %>
