@@ -2,7 +2,7 @@
   <h1 class="blog-title">Sign In</h1>
 </div>
 
-<%= form_for(@user, url: sign_in_path) do |f| %>
+<%= form_for(@user, url: admin_sign_in_path) do |f| %>
   <div class="form-group">
     <label for="user_email">Email address</label>
     <%= f.email_field :email, class: "form-control", placeholder: "Email" %>

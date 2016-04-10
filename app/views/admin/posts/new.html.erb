@@ -1,0 +1,23 @@
+<div class="blog-header">
+  <h1 class="blog-title">Create a Post</h1>
+</div>
+
+<%= form_for(@post, url: admin_posts_path) do |f| %>
+  <div class="form-group">
+    <label for="post_title">Title</label>
+    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+  </div>
+  <div class="form-group">
+    <label for="post_author">Author</label>
+    <%= f.text_field :author, class: "form-control", placeholder: "Author" %>
+  </div>
+  <div class="form-group">
+    <label for="post_content">Content</label>
+    <%= f.text_area :content, class: "form-control wysihtml5", placeholder: "Content" %>
+  </div>
+  <div class="form-group">
+    <label for="post_published_at">Published at</label>
+    <%= f.datetime_field :published_at, class: "form-control", placeholder: "Published at" %>
+  </div>
+  <%= f.submit "Create", class: "btn btn-default" %>
+<% end %>
